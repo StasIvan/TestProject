@@ -1,13 +1,8 @@
 using System.Collections;
 using UnityEngine;
 
-public class Movement : MonoBehaviour, IMove, IRotation
+public class Movement : MonoBehaviour, IMove
 {
-    public void LookAtDirection(Transform thisTransform, Vector2 direction)
-    {
-        thisTransform.rotation = Quaternion.LookRotation(direction);
-    }
-
     public void Move(CharacterController character, Vector2 direction, float speed)
     {
         character.Move(direction * speed * Time.deltaTime);
